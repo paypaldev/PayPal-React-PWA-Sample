@@ -11,6 +11,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
+import { NetworkFirst } from 'workbox-strategies';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
 clientsClaim();
@@ -69,4 +70,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
-// Any other custom service worker logic can go here.
+registerRoute(
+  ({url}) => url.pathname.endsWith('shoes.json'),
+  new NetworkFirst()
+);
