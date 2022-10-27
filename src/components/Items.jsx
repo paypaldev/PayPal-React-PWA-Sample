@@ -15,12 +15,16 @@ const Items = () => {
             setShoes(data);
         });
     }, []);
-
-  return (
-    <div className="grid-items">
-        {shoes.map(shoe=><Item key={shoe.name} {...shoe} />)}
-    </div>
-  );
+  if(shoes) {
+    return (
+        <div className="grid-items">
+            {shoes.map(shoe=><Item key={shoe.name} {...shoe} />)}
+        </div>
+      );
+  } else {
+    return (<p>LOADING...</p>)
+  }
+  
 }
 
 export default Items;

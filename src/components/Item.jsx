@@ -5,8 +5,9 @@ const Item = ({name, img}) => {
   return (
     <>
         <div className="item">
-            <img src={require(`../assets/${img}`).default} alt={name}/>
+            <img src={`../assets/${img}`} alt={img}/>
             <h2>{name}</h2>
+            <p>{`../assets/${img}`}</p>
             <button>Add To Cart</button>
         </div>
     </>
