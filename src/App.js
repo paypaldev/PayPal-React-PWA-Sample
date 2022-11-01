@@ -2,7 +2,13 @@ import React from 'react';
 import icon from './assets/icons/icon.png'
 import './App.css';
 import Items from './components/Items';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
+const initialOptions = {
+  "client-id": "YOUR-CLIENT-ID-HERE",
+  currency: "USD",
+  intent: "capture",
+};
 
 function App() {
     return (
@@ -16,7 +22,9 @@ function App() {
                 </div>
             </div>
           </nav>
-      <Items/>
+          <PayPalScriptProvider>
+            <Items/>
+          </PayPalScriptProvider>
     </div>
   );
 }

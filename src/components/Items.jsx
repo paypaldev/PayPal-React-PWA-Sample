@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Items.css';
 import Item from './Item';
-
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const Items = () => {
     const [shoes, setShoes] = useState([]);
@@ -19,6 +19,7 @@ const Items = () => {
     return (
         <div className="grid-items">
             {shoes.map(shoe=><Item key={shoe.name} {...shoe} />)}
+            <PayPalButtons style={{ layout: "vertical" }}/>
         </div>
       );
   } else {

@@ -6,9 +6,7 @@ const Item = ({name, img}) => {
     <>
         <div className="item">
             <img src={`../assets/${img}`} alt={img}/>
-            <h2>{name}</h2>
-            <p>{`../assets/${img}`}</p>
-            <button>Add To Cart</button>
+            <h3>{name}</h3>
         </div>
     </>
   );
