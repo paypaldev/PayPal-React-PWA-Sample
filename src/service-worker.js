@@ -49,6 +49,8 @@ registerRoute(
 
 // An example runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
+
+//This code was modified to cache .jpeg instead of .png
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.jpeg'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
