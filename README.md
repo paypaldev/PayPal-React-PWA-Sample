@@ -36,6 +36,13 @@ url.pathname.endsWith('.jpeg')
 
 At the bottom of the file, we are using the [NetworkFirst()](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#network-first-network-falling-back-to-cache) caching strategy to cache the call to the server that has the JSON object with all the data about the shoes of our store.
 
+```javascript
+registerRoute(
+  ({url}) => url.pathname.endsWith('shoes.json'),
+  new NetworkFirst()
+);
+```
+
 ## Run this project
 
 Make sure you run `npm i` or `yarn` to install all the dependencies of this project.
